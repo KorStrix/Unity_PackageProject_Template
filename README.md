@@ -2,12 +2,38 @@
 
 이 프로젝트는 Unity Package 프로젝트에서 자주 보이는 패턴을 담아 Template 프로젝트로 만들었습니다.
 
-목표 기능은 다음과 같습니다.
+## 무엇이 있는지?
 
-1. 이 Repository 내에 유니티 프로젝트 명을 지정하면
-2. Unit Test를 실행
-2-1. Test가 실패한 경우 메일로 보고
+### Master, Workspace Branch
 
-3. Test가 성공한 경우
-3-1. 'Package' Branch 생성 및 푸시
-3-2. DocFX를 빌드하여 문서 생성 및 결과물을 GithubPage에 푸시
+하단은 Unity Project 폴더 구조입니다.
+
+```
+ Unity Project Sample
+ |-- Assets
+ |-- Packages
+ └-- ProjectSettings
+ ```
+ 
+ 그리고 하단은 Unity Package Project 폴더의 구조입니다.
+ 
+ ```
+ Unity Package Project Sample
+ |-- Editor
+ |-- Runtime
+ |-- Tests
+ └-- package.json
+ ```
+ 
+ 폴더 구조가 다르기 때문에 
+ 
+ workspace 브렌치는 Unity Project와 이 Template 대상인 Package를 담고 있으며,
+ workspace 브렌치에서 커밋할 경우 Github Action에 따라 master 브렌치로 Package 내용만 동기화 하는 구조입니다.
+ 
+
+### Github Action
+| Name | COMMENT | Branch |
+| ------ | ------ | ------ |
+| <b>UnityTest and Upload Package</b> | Unity UnitTest를 실행 후 이상이 없으면 Package를 master로 커밋합니다. | workspace |
+| <b>Build and Deploy DocFX</b> | 문서화 도구인 DocFX를 빌드합니다. | workspace |
+| <b>Copy Master to Workspace Branch</b> | Master Branch에서 바로 작업한 경우 workspace로 커밋합니다. | master |
