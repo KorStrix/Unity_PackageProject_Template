@@ -43,9 +43,10 @@
 설치 후 자동화가 필요한 공정입니다.
 
 ### 파일 수정
-1. `master` branch의 `./github/workflows/`에 있는 `.yml` 파일들의 `env` 항목들을 수정합니다.
-2. `workspace` branch의 `./github/workflows/`에 있는 `.yml` 파일들의 `env` 항목들을 수정합니다.
-3. `workspace` branch의 `Documentation/docfx.json` 파일의 `build/globalMetadata/_gitContribute/repo` 항목을 수정합니다.
+1. `master` branch의 `package.json`에 있는 내용들을 해당 패키지에 맞게 수정합니다.
+2. `master` branch의 `.github/workflows/`에 있는 `.yml` 파일들의 `env` 항목들을 수정합니다.
+3. `workspace` branch의 `.github/workflows/`에 있는 `.yml` 파일들의 `env` 항목들을 수정합니다.
+4. `workspace` branch의 `Documentation/docfx.json` 파일의 `build/globalMetadata/_gitContribute/repo` 항목을 수정합니다.
 
 ### Unity License Secret 얻어오기
 Unity - `UnitTest` 의 경우 `UnityEngine` 에서 실행합니다.
