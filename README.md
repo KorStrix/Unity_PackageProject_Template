@@ -47,6 +47,7 @@
 2. `master` branch의 `.github/workflows/`에 있는 `.yml` 파일들의 `env` 항목들을 수정합니다.
 3. `workspace` branch의 `.github/workflows/`에 있는 `.yml` 파일들의 `env` 항목들을 수정합니다.
 4. `workspace` branch의 `Documentation/docfx.json` 파일의 `build/globalMetadata/_gitContribute/repo` 항목을 수정합니다.
+5. `workspace` branch의 `Packages/package.json` 파일을 프로젝트에 맞게 수정합니다.
 
 ### Unity License Secret 얻어오기
 Unity - `UnitTest` 의 경우 `UnityEngine` 에서 실행합니다.
