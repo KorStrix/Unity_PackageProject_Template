@@ -3,7 +3,7 @@
 # 1-1. 문제가 있으면 Artifact에 버그 리포트 및 중단,
 # 1-2. 문제가 없으면 2로 넘어갑니다.
 # 
-# 2. Packages를 Artifacts에 Upload를 한 뒤 {githubPageRepo}의 mater 분기에 커밋을 합니다.
+# 2. Packages를 Artifacts에 Upload를 한 뒤 {this_GithubRepo}의 mater 분기에 커밋을 합니다.
 name: UnityTest and Upload Package
 
 on:
@@ -16,8 +16,8 @@ env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
   packagePath: Packages/PACKAGE_NAME
     
-  # Deploy to main branch
-  githubPageRepo: ID/REPO_NAME
+  # Deploy to this Github master branch
+  this_GithubRepo: ID/REPO_NAME
     
     
     
@@ -86,6 +86,6 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # You need some setup, see https://github.com/JamesIves/github-pages-deploy-action
         BRANCH: master
         FOLDER: ${{ env.packagePath }}
-        REPOSITORY_NAME: ${{ env.githubPageRepo }}
+        REPOSITORY_NAME: ${{ env.this_GithubRepo }}
         TARGET_FOLDER: /
         CLEAN: true
