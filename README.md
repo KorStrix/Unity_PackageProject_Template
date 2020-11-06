@@ -49,7 +49,18 @@
 4. `workspace` branch의 `Documentation/docfx.json` 파일의 `build/globalMetadata/_gitContribute/repo` 항목을 수정합니다.
 5. `workspace` branch의 `Packages/package.json` 파일을 프로젝트에 맞게 수정합니다.
 
-### Unity License Secret 얻어오기
+### Github Secret 추가
+깃허브 엑세스 토큰은 깃허브에 로그인 하지 않고 저장소에 엑세스(커밋, 병합, 삭제 등)할수 있는 토큰이므로 외부에 노출되야 하지 않아야 합니다.
+이런 외부에 노출되지 않아야 하는 것들을 보통 githubaction에서는 Secret으로 관리합니다.
+
+##### 주의
+토큰의 경우 원본파일을 저장하지 않을 경우 유실되므로 반드시 백업 해둘 것.
+
+#### Github Access Token
+Github Settings-Developer Settings-Personal access tokens-Generate new token
+별도의 권한 체크 없이 Generate
+
+#### Unity License Secret 얻어오기
 Unity - `UnitTest` 의 경우 `UnityEngine` 에서 실행합니다.
 하지만 `UnityEngine` 을 사용하려면 `Unity License` 가 있어야 합니다. (무료, 유료 관계없이)
 
